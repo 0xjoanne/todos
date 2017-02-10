@@ -154,6 +154,7 @@ todo list
 .todo__label{
   width: 93%;
   margin-left: 10px;
+  text-transform: capitalize;
 }
 
 .todo__delete-btn{
@@ -233,13 +234,17 @@ alert
 .alert--success{
   background: rgba(0, 0, 0, 0.5);
   position: absolute;
-  padding: 20px;
   border-radius: 5px;
   top: 220px;
   left: 87px;
+  padding: 20px;
   animation-name: alert-animation;
-  animation-duration: 2s;
+  animation-duration: 2.5s;
   opacity: 0;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
 
 .alert__text{
@@ -248,72 +253,96 @@ alert
 
 @-webkit-keyframes alert-animation {
   0% {
-    display: none;
     opacity: 0;
   }
   25%{
-    display: block;
     opacity: 1;
   }
   75%{
     opacity: 1;
   }
+  99%{
+    opacity: 0;
+    width: inherit;
+    height: inherit;
+    padding: 20px;
+  }
   100%{
-    display: none;
+    width: 0;
+    height: 0;
+    padding: 0;
     opacity: 0;
   }
 }
 
 @-moz-keyframes alert-animation {
   0% {
-    display: none;
     opacity: 0;
   }
   25%{
-    display: block;
     opacity: 1;
   }
   75%{
     opacity: 1;
   }
+  99%{
+    opacity: 0;
+    width: inherit;
+    height: inherit;
+    padding: 20px;
+  }
   100%{
-    display: none;
+    width: 0;
+    height: 0;
+    padding: 0;
     opacity: 0;
   }
 }
 
 @-o-keyframes alert-animation {
   0% {
-    display: none;
     opacity: 0;
   }
   25%{
-    display: block;
     opacity: 1;
   }
   75%{
     opacity: 1;
   }
+  99%{
+    opacity: 0;
+    width: inherit;
+    height: inherit;
+    padding: 20px;
+  }
   100%{
-    display: none;
+    width: 0;
+    height: 0;
+    padding: 0;
     opacity: 0;
   }
 }
 
 @keyframes alert-animation {
   0% {
-    display: none;
     opacity: 0;
   }
   25%{
-    display: block;
     opacity: 1;
   }
   75%{
     opacity: 1;
   }
+  99%{
+    opacity: 0;
+    width: inherit;
+    height: inherit;
+    padding: 20px;
+  }
   100%{
-    display: none;
+    width: 0;
+    height: 0;
+    padding: 0;
     opacity: 0;
   }
 }

@@ -33,7 +33,7 @@ app.use(upload.array())
 app.get('/', function (req, res) {
   MongoClient.connect(url, function(err, db){
     if(err){
-      console.log('unable to connect')
+      console.log('Unable to connect to the mongoDB server. Error:', err)
     }else{
       var collection = db.collection('todos')
       collection.find({
@@ -201,16 +201,11 @@ function groupTodosByDate(todos){
       content: value
     }
   }).value()
+  groupedTodos  = _und.sortBy(groupedTodos, function(o){ return o.createdAt})
   return groupedTodos
 }
 
 function getCurrentDate(){
   var currentDate = new Date()
-  return currentDate.toDateString()
-}
-
-function getYesterday(){
-  var currentDate = new Date()
-  currentDate.setDate(currentDate.getDate() - 1)
   return currentDate.toDateString()
 }

@@ -41,11 +41,13 @@ $(document).ready(function(){
 
   // remove all completed todos
   $('.completed__trash-btn').click(function(){
-    $('.todo__subcontent').fadeOut('', function(){
-      $(this).remove();
-      createNoTaskScreen();
-    })
-    socket.emit('delete all completed');
+    if($('.todo__subcontent').length){
+      $('.todo__subcontent').fadeOut('', function(){
+        $(this).remove();
+        createNoTaskScreen();
+      })
+      socket.emit('delete all completed');
+    }
   })
 
   // submit new todo

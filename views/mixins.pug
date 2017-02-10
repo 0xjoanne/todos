@@ -18,7 +18,7 @@ mixin todosCat(todos)
         -else if(todo.createdAt == yesterday.toDateString())
           h5 YESTERDAY
         -else
-          h5 todo.createdAt
+          h5 #{todo.createdAt}
         ul.todo__list
           -for(var j in todo.content)
             +todoList(todo.content[j])
