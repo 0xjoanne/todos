@@ -1,0 +1,28 @@
+mixin todoList(todo)
+  li.todo__item
+    input(class="todo__toggle" type="checkbox" id= todo.id checked=todo.completed)
+    label(class="todo__label" for= todo.id) #{todo.content}
+    button(class="todo__delete-btn" data-todo-id= todo.id)
+      img(src="images/close.png" width="12")
+
+mixin todosCat(todos)
+  -var today = new Date()
+  -var yesterday = new Date()
+  -yesterday.setDate(yesterday.getDate() - 1)
+  -if(todos.length)
+    -for(var i in todos)
+      -var todo = todos[i]
+      div.todo__subcontent
+        -if(todo.createdAt == today.toDateString())
+          h5 TODAY
+        -else if(todo.createdAt == yesterday.toDateString())
+          h5 YESTERDAY
+        -else
+          h5 todo.createdAt
+        ul.todo__list
+          -for(var j in todo.content)
+            +todoList(todo.content[j])
+  -else
+    div.text--center.msg-screen
+      img(src="images/no-task.png" class="msg-screen__img")
+      p No Tasks

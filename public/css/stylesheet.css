@@ -1,0 +1,319 @@
+/*
+reset
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: #555;
+}
+a{
+  text-decoration: none;
+}
+
+li{
+  list-style: none;
+}
+
+button{
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: none;
+}
+
+.text--center{
+  text-align: center;
+}
+
+/*
+main content
+*/
+body{
+  background: linear-gradient(30deg, #aea4e3, #d3ffe8);
+}
+
+h1{
+  font-size: 100px;
+  color: #aea4e3;
+  font-weight: 200;
+}
+
+main{
+  width: 350px;
+  height: 560px;
+  margin: 0 auto;
+}
+
+.main--short{
+  height: 400px;
+}
+
+.main__content{
+  background: white;
+  border-radius: 5px;
+  padding: 70px 40px;
+  position: relative;
+}
+
+/*
+todo header
+*/
+.todo__header{
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+h2{
+  float: left;
+}
+
+.header__btn{
+  float: right;
+  opacity: 0.5;
+  margin-top: 2px;
+}
+
+/*
+todo content
+*/
+.todo__content{
+  height: 300px;
+  overflow-y: auto;
+}
+
+.content--short{
+  height: 150px;
+}
+
+.todo__content::-webkit-scrollbar {
+  width: 1px;
+}
+
+.todo__content::-webkit-scrollbar-thumb {
+  background: #42eed3;
+}
+
+.todo__subcontent{
+  padding: 15px 0 30px;
+}
+
+h5{
+  color: #aaa;
+  text-transform: uppercase;
+}
+
+/*
+todo list
+*/
+.todo__list{
+  padding: 0 15px;
+}
+
+.todo__item{
+  margin: 20px 0;
+  display: flex;
+}
+
+.todo__item *{
+  align-self: center;
+}
+
+.todo__toggle{
+  width: 7%;
+  -webkit-appearance: none;
+  /*-moz-appearance: none;*/
+  -ms-appearance: none;
+  -o-appearance: none;
+  outline: none;
+}
+.todo__toggle::before{
+  content: "";
+  height: 12px;
+  width: 12px;
+  background: #ccc;
+  display: block;
+  color: white;
+  text-align: center;
+  border-radius: 2px;
+  line-height: 12px;
+}
+
+.todo__toggle:checked::before{
+  content: '\2713';
+  background: #ff7797;
+}
+
+.todo__toggle:checked + .todo__label{
+  text-decoration: line-through;
+  color: #999;
+}
+
+.todo__label{
+  width: 93%;
+  margin-left: 10px;
+}
+
+.todo__delete-btn{
+  opacity: 0;
+}
+
+.todo__item:hover .todo__delete-btn{
+  opacity: 0.5;
+}
+
+/*
+textarea
+*/
+.todo__textarea{
+  outline: none;
+  border: none;
+  resize: none;
+  width: 270px;
+  height: 150px;
+  font-size: 16px;
+  padding-left: 15px;
+  border-left: 1px solid #ff7797;
+}
+
+/*
+bottom btn
+*/
+.todo__btn{
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  color: white;
+  border-radius: 50px;
+  position: absolute;
+  bottom: -30px;
+  left: 145px;
+  box-shadow: 0px 0 7px 1px rgba(0, 0, 0, 0.2)
+}
+
+.btn--green{
+  background: #42eed3;
+}
+
+.btn--pink{
+  background: #ff7797;
+}
+
+/*
+no-task screen
+*/
+.msg-screen{
+  margin-top: 100px;
+  opacity: 0.5;
+}
+
+.msg-screen--short{
+  margin-top: 45px;
+}
+
+.msg-screen__img{
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+
+/*
+footer
+*/
+.main__footer{
+  font-size: 12px;
+  color: #ccc;
+  margin-bottom: 50px;
+}
+
+/*
+alert
+*/
+.alert--success{
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  padding: 20px;
+  border-radius: 5px;
+  top: 220px;
+  left: 87px;
+  animation-name: alert-animation;
+  animation-duration: 2s;
+  opacity: 0;
+}
+
+.alert__text{
+  color: white;
+}
+
+@-webkit-keyframes alert-animation {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  25%{
+    display: block;
+    opacity: 1;
+  }
+  75%{
+    opacity: 1;
+  }
+  100%{
+    display: none;
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes alert-animation {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  25%{
+    display: block;
+    opacity: 1;
+  }
+  75%{
+    opacity: 1;
+  }
+  100%{
+    display: none;
+    opacity: 0;
+  }
+}
+
+@-o-keyframes alert-animation {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  25%{
+    display: block;
+    opacity: 1;
+  }
+  75%{
+    opacity: 1;
+  }
+  100%{
+    display: none;
+    opacity: 0;
+  }
+}
+
+@keyframes alert-animation {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  25%{
+    display: block;
+    opacity: 1;
+  }
+  75%{
+    opacity: 1;
+  }
+  100%{
+    display: none;
+    opacity: 0;
+  }
+}

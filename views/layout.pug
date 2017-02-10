@@ -1,0 +1,15 @@
+include ./mixins
+
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Lato:100,300,400')
+		link(rel='stylesheet', href='/css/stylesheet.css')
+	body
+		include ./header.pug
+		block content
+		include ./footer.pug
+		script(src='/socket.io/socket.io.js')
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+		script(src='/js/script.js')

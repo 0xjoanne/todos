@@ -1,0 +1,15 @@
+extends layout.pug
+
+block content
+	main
+		section.main__content
+			header.todo__header
+				h2 My Tasks
+				button.header__btn.completed-btn
+					img(src="images/ok.png")
+			section.todo__content
+				+todosCat(todos)
+			button.todo__btn.btn--green.todo__add-btn +
+			if(success)
+				div.alert--success
+					p.alert__text Added successfully!

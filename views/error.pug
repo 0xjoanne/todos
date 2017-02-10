@@ -1,0 +1,13 @@
+extends layout.pug
+
+block content
+	main.main--short
+		section.main__content
+			header.todo__header
+				h2 No Found
+				button.header__btn.list-btn
+					img(src="images/list.png")
+			section.todo__content.content--short
+				div.text--center.msg-screen.msg-screen--short
+					img(src="images/no-task.png" class="msg-screen__img")
+					p 404

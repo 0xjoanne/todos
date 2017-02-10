@@ -1,0 +1,14 @@
+extends layout.pug
+
+block content
+	main.main--short
+		section.main__content
+			header.todo__header
+				h2 Add New Tasks
+				button.header__btn.list-btn
+					img(src="images/close.png")
+			section.todo__content.content--short
+				form(action="/", method="POST")
+					textarea(class="todo__textarea" name="content" autofocus placeholder="What needs to be done?")
+					button(class="todo__btn btn--green send-btn" type="submit")
+						img(src="images/send.png")

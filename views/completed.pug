@@ -1,0 +1,13 @@
+extends layout.pug
+
+block content
+	main
+		section.main__content
+			header.todo__header
+				h2 Completed
+				button.header__btn.list-btn
+					img(src="images/list.png")
+			section.todo__content
+				+todosCat(todos)
+			button.todo__btn.btn--pink.completed__trash-btn
+				img(src="images/trash.png")
