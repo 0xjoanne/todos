@@ -4,8 +4,7 @@ Todos is a single page web application with Node.js, Mongodb and Pug.
 
 ## Screenshot
 
-![Screenshot of Todos]
-(screenshot.png)
+![Screenshot of Todos](screenshot.png)
 
 ## Install Package
 
